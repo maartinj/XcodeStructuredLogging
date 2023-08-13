@@ -36,7 +36,8 @@ class DataStore {
         }
     }
     func loadToDos() {
-        print("Loading ToDos from documents directory")
+        Debug.print("Loading ToDos from documents directory", type: .info, extended: true)
+//        print("ℹ️ Loading ToDos from documents directory")
         do {
             let data = try FileManager().readDocument(docName: FileManager.fileName)
             let decoder = JSONDecoder()

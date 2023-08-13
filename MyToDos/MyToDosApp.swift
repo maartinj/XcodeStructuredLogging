@@ -17,7 +17,8 @@ struct MyToDosApp: App {
             ContentView()
                 .environment(DataStore())
                 .onAppear {
-                    print(URL.documentsDirectory.path())
+                    Debug.print(URL.documentsDirectory.path(), type: .info, extended: true)
+//                    print("ℹ️", URL.documentsDirectory.path())
                 }
         }
     }
