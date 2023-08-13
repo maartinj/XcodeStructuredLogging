@@ -14,26 +14,30 @@ import OSLog
 
 @Observable
 class DataStore {
-    let logger = Logger(subsystem: "com.mj.MyToDos", category: "DataStore")
+//    let logger = Logger(subsystem: "com.mj.MyToDos", category: "DataStore")
+    let logger = Logger.dataStore
     var toDos:[ToDo] = []
     
     func addToDo(_ toDo: ToDo) {
         toDos.append(toDo)
-        print("New ToDo added")
+//        print("New ToDo added")
+        logger.info("New ToDo added")
         saveToDos()
     }
     
     func updateToDo(_ toDo: ToDo) {
         guard let index = toDos.firstIndex(where: { $0.id == toDo.id}) else { return }
         toDos[index] = toDo
-        print("ToDo updated")
+//        print("ToDo updated")
+        logger.info("ToDo updated")
         saveToDos()
     }
     
     func deleteToDo(_ toDo: ToDo) {
         if let indexToDelete = toDos.firstIndex(where: {$0.id == toDo.id}) {
             toDos.remove(at: indexToDelete)
-            print("ToDo deleted")
+//            print("ToDo deleted")
+            logger.info("ToDo deleted")
             saveToDos()
         }
     }
@@ -47,19 +51,22 @@ class DataStore {
             toDos = try decoder.decode([ToDo].self, from: data)
 
         } catch {
-            print("Failed to load todos: \(error.localizedDescription)")
+//            print("Failed to load todos: \(error.localizedDescription)")
+            logger.error("Failed to load todos: \(error.localizedDescription)")
         }
     }
     
     func saveToDos() {
-        print("Saving toDos to documents directory")
+//        print("Saving toDos to documents directory")
+        logger.info("Saving toDos to documents directory")
         let encoder = JSONEncoder()
         do {
             let data = try encoder.encode(toDos)
             let jsonString = String(decoding: data, as: UTF8.self)
             try FileManager().saveDocument(contents: jsonString, docName: FileManager.fileName)
         } catch {
-            print("Failed to save todos: \(error.localizedDescription)")
+//            print("Failed to save todos: \(error.localizedDescription)")
+            logger.error("Failed to save todos: \(error.localizedDescription)")
         }
     }
 }

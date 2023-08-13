@@ -10,11 +10,13 @@
 
 // Link: https://www.youtube.com/watch?v=Zi6JRczGoME&ab_channel=StewartLynch
 
+import OSLog
 import SwiftUI
 
 struct ContentView: View {
     @Environment(DataStore.self) var dataStore
     @State private var modalType: ModalType? = nil
+    let logger = Logger.fileLocation
     var body: some View {
         NavigationStack {
             @Bindable var dataStore = dataStore
@@ -70,7 +72,8 @@ struct ContentView: View {
             if FileManager().docExist(named: FileManager.fileName){
                 dataStore.loadToDos()
             } else {
-                print("File \(FileManager.fileName) does not exist")
+//                print("File \(FileManager.fileName) does not exist")
+                logger.info("File \(FileManager.fileName) does not exist")
             }
         }
     }

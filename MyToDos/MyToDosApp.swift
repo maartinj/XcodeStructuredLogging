@@ -13,7 +13,8 @@ import SwiftUI
 
 @main
 struct MyToDosApp: App {
-    let logger = Logger(subsystem: "com.mj.MyToDos", category: "FileLocation")
+//    let logger = Logger(subsystem: "com.mj.MyToDos", category: "FileLocation")
+    let logger = Logger.fileLocation
     var body: some Scene {
         WindowGroup {
             ContentView()

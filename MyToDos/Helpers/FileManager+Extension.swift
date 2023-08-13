@@ -9,18 +9,20 @@
 // Buy me a ko-fi:  https://ko-fi.com/StewartLynch
 
 import Foundation
-
+import OSLog
 
 
 extension FileManager {
     static let fileName = "ToDos.json"
+    static let logger = Logger.fileManager
     func readDocument(docName: String) throws -> Data {
         let url = URL.documentsDirectory.appendingPathComponent(docName)
         do {
             let data = try Data(contentsOf: url)
             return data
         } catch {
-            print(error.localizedDescription)
+//            print(error.localizedDescription)
+            Self.logger.error("\(error.localizedDescription)")
             throw ToDoError.readError
         }
     }
@@ -30,7 +32,8 @@ extension FileManager {
         do {
             try contents.write(to: url, atomically: true, encoding: .utf8)
         } catch {
-            print(error.localizedDescription)
+//            print(error.localizedDescription)
+            Self.logger.error("\(error.localizedDescription)")
             throw ToDoError.saveError
         }
     }

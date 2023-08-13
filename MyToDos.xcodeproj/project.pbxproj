@@ -20,6 +20,7 @@
 		BBBAEA71261E42C30025942F /* ToDoFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBAEA70261E42C30025942F /* ToDoFormView.swift */; };
 		BBBAEA74261E4A1D0025942F /* ModalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBAEA73261E4A1D0025942F /* ModalType.swift */; };
 		BBBAEA7C261E594D0025942F /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBAEA7B261E594D0025942F /* FileManager+Extension.swift */; };
+		E41C67042A8972C7007011FA /* Logger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C67032A8972C7007011FA /* Logger+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BBBAEA70261E42C30025942F /* ToDoFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFormView.swift; sourceTree = "<group>"; };
 		BBBAEA73261E4A1D0025942F /* ModalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalType.swift; sourceTree = "<group>"; };
 		BBBAEA7B261E594D0025942F /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		E41C67032A8972C7007011FA /* Logger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				BBBAEA7B261E594D0025942F /* FileManager+Extension.swift */,
 				BBAC6DA82A5CA9E900DC190D /* DebugPrint.swift */,
+				E41C67032A8972C7007011FA /* Logger+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				BBBAEA6B261E35E40025942F /* DataStore.swift in Sources */,
 				BBBAEA5A261E35040025942F /* ContentView.swift in Sources */,
 				BBAC6DA52A5C8A9600DC190D /* ToDoError.swift in Sources */,
+				E41C67042A8972C7007011FA /* Logger+Extension.swift in Sources */,
 				BBAC6DA92A5CA9E900DC190D /* DebugPrint.swift in Sources */,
 				BBBAEA58261E35040025942F /* MyToDosApp.swift in Sources */,
 				BBBAEA6E261E41D80025942F /* ToDoForm.swift in Sources */,
