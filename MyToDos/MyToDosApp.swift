@@ -8,17 +8,20 @@
 // Subscribe on YouTube: https://youTube.com/@StewartLynch
 // Buy me a ko-fi:  https://ko-fi.com/StewartLynch
 
+import OSLog
 import SwiftUI
 
 @main
 struct MyToDosApp: App {
+    let logger = Logger(subsystem: "com.mj.MyToDos", category: "FileLocation")
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(DataStore())
                 .onAppear {
-                    Debug.print(URL.documentsDirectory.path(), type: .info, extended: true)
 //                    print("ℹ️", URL.documentsDirectory.path())
+//                    Debug.print(URL.documentsDirectory.path(), type: .info, extended: true)
+                    logger.info("\(URL.documentsDirectory.path())")
                 }
         }
     }

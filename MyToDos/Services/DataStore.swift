@@ -10,9 +10,11 @@
 
 import Foundation
 import Observation
+import OSLog
 
 @Observable
 class DataStore {
+    let logger = Logger(subsystem: "com.mj.MyToDos", category: "DataStore")
     var toDos:[ToDo] = []
     
     func addToDo(_ toDo: ToDo) {
@@ -36,7 +38,8 @@ class DataStore {
         }
     }
     func loadToDos() {
-        Debug.print("Loading ToDos from documents directory", type: .info, extended: true)
+//        Debug.print("Loading ToDos from documents directory", type: .info, extended: true)
+        logger.info("Loading ToDos from documents directory")
 //        print("ℹ️ Loading ToDos from documents directory")
         do {
             let data = try FileManager().readDocument(docName: FileManager.fileName)
